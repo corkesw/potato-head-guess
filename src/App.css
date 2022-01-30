@@ -1,38 +1,95 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100px 400px auto;
+  grid-template-areas:
+    "header header"
+    "score guess"
+    "word word"
+    "reset reset";
+  background-color: #6fedb7;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header_comp {
+  grid-area: header;
+  background-color: #6fedb7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.scorecard_comp {
+  grid-area: score;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.score-emoji {
+  margin: 0px;
+  font-size: 300px;
+}
+.guess_comp {
+  /* grid-area: guess; */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 10px;
+}
+
+.letter {
+  font-size: 20px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 40%;
+  margin: 10px;
+  width: 45px;
+  height: 45px;
+  background-color: #4ea699;
+}
+
+.letter:disabled {
+  background-color: #140d4f;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.word {
+  grid-area: word;
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wordletter {
+  font-size: 30px;
+  border: 2px solid black;
+  border-radius: 40%;
+  margin: 15px;
+  width: 60px;
+  height: 60px;
+  background-color: #2dd881;
+}
+
+.reset {
+  display: flex;
+  justify-content: center;
+  grid-area: reset;
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.reset-button {
+  font-size: 20px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10%;
+  margin: 10px;
+  height: 45px;
+  background-color: #140d4f;
+  color: white;
 }
